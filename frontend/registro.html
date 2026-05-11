@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro - Club de los Poetas del Fútbol</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+<header class="login-header">
+</header>
+
+<div class="login-container">
+
+    <h1 class="login-title" id="tituloRegistro">Registro de Usuario</h1>
+
+    <p id="tipoUsuario" class="subtitle"></p>
+
+    <!-- novalidate desactiva validaciones automáticas del navegador -->
+    <form id="registroForm" class="form-box" autocomplete="off" novalidate>
+
+        <!-- 🔹 INPUT OCULTO PARA ENVIAR EL PERFIL AL BACKEND -->
+        <input type="hidden" name="perfil" id="perfil">
+
+        <label>Nombre y Apellido ó crea tu nombre en esta historia</label>
+        <input 
+            type="text"
+            id="nombreCompleto"
+            name="nombreCompleto"
+            placeholder="Ej: Juan Pérez"
+            autocomplete="off"
+            required
+        >
+
+        <label>Jugador favorito de la historia</label>
+        <select id="jugador" name="jugador" class="select-box" required>
+            <option value="">-- Seleccione un jugador --</option>
+        </select>
+
+        <label>Correo</label>
+        <input 
+            type="text"
+            id="correo"
+            name="correo"
+            placeholder="tucorreo@gmail.com"
+            autocomplete="off"
+            required
+        >
+
+        <label>Contraseña</label>
+        <input 
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Crea una contraseña segura"
+            autocomplete="new-password"
+            required
+        >
+
+        <button type="submit" class="btn btn-primary">Registrarse</button>
+    </form>
+
+</div>
+
+<!-- versión forzada para evitar cache -->
+<script src="js/registro.js?v=FINAL"></script>
+
+</body>
+</html>
+
+

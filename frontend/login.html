@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Login - Club de los Poetas del Fútbol</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+<a href="index.html" class="back-arrow"><</a>
+<div class="form-container">
+
+    <header class="login-header">
+        <img src="img/logo.png" class="header-logo" alt="logo">
+    </header>
+
+    <h1 class="login-title">Iniciar Sesión</h1>
+
+    <form id="loginForm" class="form-box" autocomplete="off">
+
+        <label>Correo</label>
+        <input 
+            type="text"
+            name="correo"
+            id="correo"
+            placeholder="tucorreo@gmail.com"
+            required
+        >
+
+        <label>Contraseña</label>
+        <input 
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Tu contraseña"
+            required
+        >
+
+        <button type="submit" class="btn btn-primary">
+            Entrar
+        </button>
+        <a href="forgot_password.php" class="forgot-link">
+    ¿Olvidaste tu contraseña?
+</a>
+    </form>
+
+</div>
+
+<script src="js/login.js"></script>
+
+</body>
+</html>

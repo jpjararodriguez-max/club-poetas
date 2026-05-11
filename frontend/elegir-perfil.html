@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Elegir Perfil - Club de los Poetas del Fútbol</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="login-header">
+</header>
+
+<div class="login-container">
+
+    <h1 class="login-title">EL CLUB DE LOS POETAS DEL FÚTBOL</h1>
+
+    <div class="info-box">
+        <p>
+            Para registrarte y disfrutar de la mejor información, primero elige cuál es tu perfil.
+        </p>
+        <p>
+            Si eres periodista deportivo, reportero o presentador, selecciona la opción <strong>Periodista Deportivo</strong>.
+        </p>
+        <p>
+            Si eres un increíble fanático del fútbol, elige la opción <strong>Fanático</strong>.
+        </p>
+    </div>
+
+    <div class="options">
+        <a
+            href="registro.html?tipo=periodista"
+            class="option-btn"
+            onclick="localStorage.setItem('tipoPerfil', 'periodista')"
+        >
+            PERIODISTA DEPORTIVO
+        </a>
+
+        <a
+            href="registro.html?tipo=fanatico"
+            class="option-btn"
+            onclick="localStorage.setItem('tipoPerfil', 'fanatico')"
+        >
+            FANÁTICO
+        </a>
+    </div>
+
+</div>
+
+</body>
+</html>
