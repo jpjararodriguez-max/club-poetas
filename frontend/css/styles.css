@@ -310,65 +310,212 @@ form input:focus {
     display: none;
 }
 
+/* ========================= */
+/* MIS FAVORITOS MEJORAR APARIENCIA */
+/* ========================= */
 
-/* mis favoritos */
 .favoritos-container {
-    padding: 40px;
+    width: 100%;
+    max-width: 1400px;
+    padding: 40px 20px;
     text-align: center;
 }
 
 .favoritos-title {
     color: #C6A34A;
-    margin-bottom: 30px;
+    margin-bottom: 35px;
+    font-size: 28px;
+    text-shadow: 0 0 10px rgba(198,163,74,0.25);
 }
 
 .favoritos-content {
     display: flex;
     justify-content: center;
+    align-items: flex-start;
     gap: 40px;
+    flex-wrap: wrap;
 }
 
-/* LISTA */
+/* ========================= */
+/* LISTA JUGADORES */
+/* ========================= */
+
 .lista-jugadores {
-    width: 300px;
-    max-height: 400px;
+    width: 420px;
+    max-height: 650px;
     overflow-y: auto;
-    background-color: #0C1A45;
+
+    background: linear-gradient(145deg, #0C1A45, #081233);
     border: 2px solid #C6A34A;
-    border-radius: 12px;
-    padding: 15px;
+    border-radius: 20px;
+
+    padding: 20px;
+
+    box-shadow: 0 0 20px rgba(198,163,74,0.15);
+    transition: 0.3s;
 }
+
+.lista-jugadores:hover {
+    transform: scale(1.01);
+    box-shadow: 0 0 28px rgba(198,163,74,0.35);
+}
+
+/* SCROLL PRO */
+
+.lista-jugadores::-webkit-scrollbar {
+    width: 10px;
+}
+
+.lista-jugadores::-webkit-scrollbar-track {
+    background: #071133;
+    border-radius: 10px;
+}
+
+.lista-jugadores::-webkit-scrollbar-thumb {
+    background: #C6A34A;
+    border-radius: 10px;
+}
+
+/* ITEMS */
 
 .jugador {
-    padding: 10px;
-    border-bottom: 1px solid #ffffff22;
+    background-color: rgba(255,255,255,0.03);
+
+    margin-bottom: 10px;
+    padding: 14px;
+
+    border-radius: 12px;
+
+    border: 1px solid rgba(255,255,255,0.06);
+
     cursor: pointer;
+
+    transition: 0.3s;
+
+    font-size: 15px;
+    font-weight: 500;
 }
 
 .jugador:hover {
     background-color: #C6A34A;
     color: #071133;
+
+    transform: translateX(6px);
+
+    box-shadow: 0 0 18px rgba(198,163,74,0.4);
 }
 
-/* SELECCIONADOS */
+/* ========================= */
+/* PANEL FAVORITOS */
+/* ========================= */
+
 .seleccionados {
-    width: 300px;
-    background-color: #0C1A45;
+    width: 420px;
+
+    background: linear-gradient(145deg, #0C1A45, #081233);
+
     border: 2px solid #C6A34A;
-    border-radius: 12px;
-    padding: 15px;
+    border-radius: 20px;
+
+    padding: 25px;
+
+    box-shadow: 0 0 20px rgba(198,163,74,0.15);
+
+    transition: 0.3s;
 }
+
+.seleccionados:hover {
+    transform: scale(1.01);
+    box-shadow: 0 0 28px rgba(198,163,74,0.35);
+}
+
+.seleccionados h3 {
+    color: #C6A34A;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+/* LISTA FAVORITOS */
 
 .seleccionados ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
+
+/* ITEM FAVORITO */
 
 .seleccionados li {
-    margin: 8px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: rgba(255,255,255,0.03);
+
+    padding: 14px;
+    margin-bottom: 12px;
+
+    border-radius: 12px;
+
+    border: 1px solid rgba(255,255,255,0.06);
+
+    transition: 0.3s;
 }
 
+.seleccionados li:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 18px rgba(198,163,74,0.25);
+}
 
+/* BOTÓN ELIMINAR */
+
+.seleccionados li button {
+    background-color: transparent;
+
+    border: 2px solid #C6A34A;
+
+    color: #C6A34A;
+
+    width: 35px;
+    height: 35px;
+
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    font-size: 14px;
+}
+
+.seleccionados li button:hover {
+    background-color: #C6A34A;
+    color: #071133;
+
+    transform: scale(1.15) rotate(8deg);
+}
+
+/* BOTÓN GUARDAR */
+
+.seleccionados .btn {
+    margin-top: 20px;
+    width: 100%;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 950px) {
+
+    .favoritos-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .lista-jugadores,
+    .seleccionados {
+        width: 90%;
+    }
+}
 
 /* MI PERFIL DE LA APP */
 .perfil-container {
