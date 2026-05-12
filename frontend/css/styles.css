@@ -58,6 +58,21 @@ p {
     font-size: 18px;
     font-weight: bold;
     transition: 0.3s;
+
+    color: #C6A34A;
+    background: transparent;
+    border: none;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* EFECTO HOVER PREMIUM */
+.btn:hover {
+    color: #e7c46a;
+    transform: translateX(-3px);
+    text-shadow: 0 0 10px rgba(198,163,74,0.5);
 }
 
 .btn-primary {
