@@ -28,7 +28,8 @@ return [
         "asistencias" => 350,
         "partidos" => 1100,
         "titulos" => 44,
-        "clubes" => ["Barcelona", "PSG", "Inter Miami"]
+        "clubes" => ["Barcelona", "PSG", "Inter Miami"],
+        "imagen" => "img/messi.png"
     ],
 
     "neymar" => [
@@ -84,7 +85,8 @@ return [
     "asistencias" => 300,
     "partidos" => 800,
     "titulos" => 30,
-    "clubes" => ["Santos", "New York Cosmos"]
+    "clubes" => ["Santos", "New York Cosmos"],
+    "imagen" => "img/pele.png"
 ],
 
 "maradona" => [
@@ -98,7 +100,8 @@ return [
     "asistencias" => 200,
     "partidos" => 700,
     "titulos" => 15,
-    "clubes" => ["Boca Juniors", "Barcelona", "Napoli"]
+    "clubes" => ["Boca Juniors", "Barcelona", "Napoli"],
+    "imagen" => "img/maradona.png"
 ],
 
 "beckenbauer" => [
@@ -112,7 +115,8 @@ return [
     "asistencias" => 80,
     "partidos" => 600,
     "titulos" => 20,
-    "clubes" => ["Bayern Munich", "New York Cosmos"]
+    "clubes" => ["Bayern Munich", "New York Cosmos"],
+    "imagen" => "img/beckhenbauer.png"
 ],
 
 "di stefano" => [
@@ -126,7 +130,8 @@ return [
     "asistencias" => 150,
     "partidos" => 700,
     "titulos" => 25,
-    "clubes" => ["River Plate", "Real Madrid"]
+    "clubes" => ["River Plate", "Real Madrid"],
+    "imagen" => "img/di stefano.png"
 ],
 
 "puskas" => [
@@ -140,7 +145,8 @@ return [
     "asistencias" => 200,
     "partidos" => 800,
     "titulos" => 20,
-    "clubes" => ["Honved", "Real Madrid"]
+    "clubes" => ["Honved", "Real Madrid"],
+    "imagen" => "img/puskas.png"
 ],
 
 "bobby charlton" => [
@@ -182,7 +188,8 @@ return [
     "asistencias" => 100,
     "partidos" => 600,
     "titulos" => 15,
-    "clubes" => ["Bayern Munich"]
+    "clubes" => ["Bayern Munich"],
+    "imagen" => "img/g.muller.png"
 ],
 
 "ronaldo nazario" => [
@@ -210,7 +217,8 @@ return [
     "asistencias" => 120,
     "partidos" => 700,
     "titulos" => 15,
-    "clubes" => ["Juventus", "Real Madrid"]
+    "clubes" => ["Juventus", "Real Madrid"],
+    "imagen" => "img/zidane.png"
 ],
 
 "platini" => [
@@ -224,7 +232,8 @@ return [
     "asistencias" => 140,
     "partidos" => 600,
     "titulos" => 10,
-    "clubes" => ["Nancy", "Juventus"]
+    "clubes" => ["Nancy", "Juventus"],
+    "imagen" => "img/platini.png"
 ],
 
 "lev yashin" => [
@@ -252,7 +261,8 @@ return [
     "asistencias" => 80,
     "partidos" => 600,
     "titulos" => 5,
-    "clubes" => ["Fiorentina", "Roma"]
+    "clubes" => ["Fiorentina", "Roma"],
+    "imagen" => "img/batistuta.png"
 ],
 
 "hagi" => [
@@ -336,7 +346,8 @@ return [
     "asistencias" => 150,
     "partidos" => 700,
     "titulos" => 15,
-    "clubes" => ["Sao Paulo", "Milan", "Real Madrid"]
+    "clubes" => ["Sao Paulo", "Milan", "Real Madrid"],
+    "imagen" => "img/kaka.png"
 ],
 
 "haaland" => [
@@ -350,7 +361,8 @@ return [
     "asistencias" => 60,
     "partidos" => 300,
     "titulos" => 10,
-    "clubes" => ["Dortmund", "Manchester City"]
+    "clubes" => ["Dortmund", "Manchester City"],
+    "imagen" => "img/haaland.png"
 ],
 
 "xavi" => [
@@ -378,7 +390,8 @@ return [
     "asistencias" => 200,
     "partidos" => 900,
     "titulos" => 35,
-    "clubes" => ["Barcelona", "Vissel Kobe"]
+    "clubes" => ["Barcelona", "Vissel Kobe"],
+    "imagen" => "img/iniesta.png"
 ],
 
 "modric" => [
@@ -392,7 +405,8 @@ return [
     "asistencias" => 140,
     "partidos" => 800,
     "titulos" => 25,
-    "clubes" => ["Tottenham", "Real Madrid"]
+    "clubes" => ["Tottenham", "Real Madrid"],
+    "imagen" => "img/modric.png"
 ],
 
 "maldini" => [
@@ -406,7 +420,8 @@ return [
     "asistencias" => 60,
     "partidos" => 1000,
     "titulos" => 25,
-    "clubes" => ["Milan"]
+    "clubes" => ["Milan"],
+    "imagen" => "img/maldini.png"
 ],
 
 "sergio ramos" => [
@@ -420,7 +435,8 @@ return [
     "asistencias" => 50,
     "partidos" => 900,
     "titulos" => 25,
-    "clubes" => ["Real Madrid", "PSG", "Sevilla"]
+    "clubes" => ["Real Madrid", "PSG", "Sevilla"],
+    "imagen" => "img/ramos.png"
 ],
 
 "thierry henry" => [
@@ -490,7 +506,8 @@ return [
     "asistencias" => 2,
     "partidos" => 600,
     "titulos" => 15,
-    "clubes" => ["Chelsea", "Real Madrid"]
+    "clubes" => ["Chelsea", "Real Madrid"],
+    "imagen" => "img/courtuis.png"
 ],
 
 "roberto carlos" => [
@@ -532,7 +549,8 @@ return [
     "asistencias" => 40,
     "partidos" => 700,
     "titulos" => 20,
-    "clubes" => ["Milan"]
+    "clubes" => ["Milan"],
+    "imagen" => "img/bareci.png"
 ],
 
 "gullit" => [
@@ -546,7 +564,8 @@ return [
     "asistencias" => 120,
     "partidos" => 700,
     "titulos" => 15,
-    "clubes" => ["Milan", "Chelsea"]
+    "clubes" => ["Milan", "Chelsea"],
+    "imagen" => "img/ruud gullit.png"
 ],
 
 "baggio" => [
@@ -560,7 +579,8 @@ return [
     "asistencias" => 120,
     "partidos" => 700,
     "titulos" => 10,
-    "clubes" => ["Juventus", "Milan"]
+    "clubes" => ["Juventus", "Milan"],
+    "imagen" => "img/baggio.png"
 ],
 
 "romario" => [
@@ -574,7 +594,8 @@ return [
     "asistencias" => 100,
     "partidos" => 800,
     "titulos" => 15,
-    "clubes" => ["Barcelona", "PSV"]
+    "clubes" => ["Barcelona", "PSV"],
+    "imagen" => "img/romario.png"
 ],
 
 "raul" => [
@@ -616,7 +637,8 @@ return [
     "asistencias" => 200,
     "partidos" => 800,
     "titulos" => 25,
-    "clubes" => ["Real Madrid", "Lyon"]
+    "clubes" => ["Real Madrid", "Lyon"],
+    "imagen" => "img/benzema.png"
 ],
 
 "figo" => [
@@ -700,7 +722,8 @@ return [
     "asistencias" => 80,
     "partidos" => 500,
     "titulos" => 10,
-    "clubes" => ["Ajax", "Milan"]
+    "clubes" => ["Ajax", "Milan"],
+    "imagen" => "img/van vasten.png"
 ],
 
 "matthaus" => [
@@ -784,7 +807,8 @@ return [
     "asistencias" => 150,
     "partidos" => 800,
     "titulos" => 5,
-    "clubes" => ["Roma"]
+    "clubes" => ["Roma"],
+    "imagen" => "img/totti.png"
 ],
 
 "del piero" => [
@@ -812,7 +836,8 @@ return [
     "asistencias" => 100,
     "partidos" => 600,
     "titulos" => 10,
-    "clubes" => ["Bayern Munich", "Inter"]
+    "clubes" => ["Bayern Munich", "Inter"],
+    "imagen" => "img/rummenigue.png"
 ],
 
 "keegan" => [
@@ -868,7 +893,8 @@ return [
     "asistencias" => 0,
     "partidos" => 700,
     "titulos" => 5,
-    "clubes" => ["Leicester City", "Stoke City"]
+    "clubes" => ["Leicester City", "Stoke City"],
+    "imagen" => "img/gordon.png"
 ],
 
 "dino zoff" => [
@@ -910,7 +936,8 @@ return [
     "asistencias" => 80,
     "partidos" => 500,
     "titulos" => 5,
-    "clubes" => ["Juventus", "Milan"]
+    "clubes" => ["Juventus", "Milan"],
+    "imagen" => "img/paolo rossi.png"
 ],
 
 "marcelo" => [
@@ -952,7 +979,8 @@ return [
     "asistencias" => 90,
     "partidos" => 600,
     "titulos" => 10,
-    "clubes" => ["Botafogo"]
+    "clubes" => ["Botafogo"],
+    "imagen" => "img/jairzinho.png"
 ],
 
 "socrates" => [
@@ -1008,7 +1036,8 @@ return [
     "asistencias" => 80,
     "partidos" => 600,
     "titulos" => 15,
-    "clubes" => ["Ajax", "Milan"]
+    "clubes" => ["Ajax", "Milan"],
+    "imagen" => "img/rijkaard.png"
 ],
 
 "rivelinho" => [
@@ -1022,7 +1051,8 @@ return [
     "asistencias" => 120,
     "partidos" => 600,
     "titulos" => 10,
-    "clubes" => ["Corinthians"]
+    "clubes" => ["Corinthians"],
+    "imagen" => "img/rivelinho.png"
 ],
 
 "figueroa" => [
@@ -1106,7 +1136,8 @@ return [
     "asistencias" => 120,
     "partidos" => 600,
     "titulos" => 10,
-    "clubes" => ["Barcelona", "Inter"]
+    "clubes" => ["Barcelona", "Inter"],
+    "imagen" => "img/luis suarez miramontes.png"
 ],
 
 "passarella" => [
@@ -1134,7 +1165,8 @@ return [
     "asistencias" => 150,
     "partidos" => 800,
     "titulos" => 30,
-    "clubes" => ["Real Madrid", "Bayern Munich"]
+    "clubes" => ["Real Madrid", "Bayern Munich"],
+    "imagen" => "img/kroos.png"
 ],
 
 "bobby moore" => [
@@ -1204,7 +1236,8 @@ return [
     "asistencias" => 100,
     "partidos" => 600,
     "titulos" => 10,
-    "clubes" => ["Slavia Praga"]
+    "clubes" => ["Slavia Praga"],
+    "imagen" => "img/bican.png"
 ],
 
 "sindelar" => [
