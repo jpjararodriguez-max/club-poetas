@@ -1004,7 +1004,7 @@ return [
     "partidos" => 900,
     "titulos" => 40,
     "clubes" => ["Barcelona", "PSG", "Juventus"],
-    "imagen" => "img/dani alves.png"
+    "imagen" => "img/dani alvez.png"
 ],
 
 "jairzinho" => [
@@ -1318,7 +1318,7 @@ return [
     "partidos" => 800,
     "titulos" => 30,
     "clubes" => ["Bayern Munich"],
-    "imagen" => "img/thomas mulles.png"
+    "imagen" => "img/thomas muller.png"
 ],
 
 "moreno" => [
