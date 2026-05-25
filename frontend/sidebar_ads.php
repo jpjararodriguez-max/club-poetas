@@ -1,7 +1,7 @@
 <div class="left-global-ad">
 
     <a href="#">
-        <img src="./img/publicidad1.png" alt="Publicidad izquierda">
+        <img src="./img/publicidad1-nueva.png" alt="Publicidad">
     </a>
 
 </div>
