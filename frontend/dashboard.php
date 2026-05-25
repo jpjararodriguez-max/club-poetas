@@ -26,6 +26,18 @@ require_once "../backend/proteger.php";
         </div>
     </header>
 
+    <div class="dashboard-layout">
+
+    <!-- BANNER IZQUIERDO -->
+    <aside class="ads-sidebar left-ad">
+        <a href="#">
+            <img src="./img/publicidad2.png" alt="Publicidad">
+        </a>
+    </aside>
+
+    <!-- CONTENIDO CENTRAL -->
+    <div class="dashboard-center">
+
     <!-- BUSCADOR -->
     <main class="search-section">
         <h2 class="search-title">🔎Busca tu jugador</h2>
@@ -76,7 +88,7 @@ require_once "../backend/proteger.php";
     });
     </script>
 
-    <!-- 🔥 SCRIPT BUSCADOR PRO -->
+    <!--  SCRIPT BUSCADOR PRO -->
     <script>
     const buscador = document.getElementById("buscador");
     const sugerencias = document.getElementById("sugerencias");
@@ -117,6 +129,23 @@ require_once "../backend/proteger.php";
             });
     });
     </script>
+    </div>
+
+    <!-- BANNER DERECHO -->
+    <aside class="ads-sidebar right-ad">
+        <a href="#">
+            <img src="./img/publicidad2.png" alt="Publicidad">
+        </a>
+    </aside>
+
+</div>
+
+<!-- BANNER INFERIOR -->
+<div class="footer-ad">
+    <a href="#">
+        <img src="./img/publicidad3.png" alt="Publicidad Inferior">
+    </a>
+</div>
 
 </body>
 </html>
