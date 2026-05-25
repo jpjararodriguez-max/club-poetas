@@ -10,6 +10,8 @@ require_once "../backend/proteger.php";
 </head>
 
 <body class="dashboard-body">
+    
+<?php include "sidebar_ads.php"; ?>
 
     <!-- HEADER -->
     <header class="dash-header-pro">
@@ -25,18 +27,6 @@ require_once "../backend/proteger.php";
             <a href="../backend/logout.php" class="logout-btn">Cerrar Sesión</a>
         </div>
     </header>
-
-    <div class="dashboard-layout">
-
-    <!-- BANNER IZQUIERDO -->
-    <aside class="ads-sidebar left-ad">
-        <a href="#">
-            <img src="./img/publicidad2.png" alt="Publicidad">
-        </a>
-    </aside>
-
-    <!-- CONTENIDO CENTRAL -->
-    <div class="dashboard-center">
 
     <!-- BUSCADOR -->
     <main class="search-section">
@@ -130,22 +120,6 @@ require_once "../backend/proteger.php";
     });
     </script>
     </div>
-
-    <!-- BANNER DERECHO -->
-    <aside class="ads-sidebar right-ad">
-        <a href="#">
-            <img src="./img/publicidad2.png" alt="Publicidad">
-        </a>
-    </aside>
-
-</div>
-
-<!-- BANNER INFERIOR -->
-<div class="footer-ad">
-    <a href="#">
-        <img src="./img/publicidad3.png" alt="Publicidad Inferior">
-    </a>
-</div>
 
 </body>
 </html>
