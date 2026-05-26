@@ -588,12 +588,12 @@ form input:focus {
 }
 
 
-/* NAVEGADOR GLOBAL */
+/* NAVEGADOR GLOBAL  JUGADOR.PHP*/
 .jugador-nav {
     display: flex;
     justify-content: center;
-    gap: 30px;
-    margin-top: 20px;
+    gap: 0px;
+    margin-top: 0px;
     color: #C6A34A;
     font-weight: bold;
 }
@@ -746,12 +746,15 @@ form input:focus {
         grid-template-columns: 1fr;
     }
 }
-/* JUGADOR PAGINA ORDEN */
+/* JUGADOR.PHP PAGINA BLOQUE DE FOTO HASTA ABAJO */
 .jugador-container {
-    max-width: 1100px;
+    max-width: 900px;
+
     width: 100%;
-    margin: 40px auto;
-    padding: 20px;
+
+    margin: 5px auto 40px auto;
+
+    padding: 20px 40px;
 }
 
 /* CENTRAR CONTENIDO CORRECTO */
@@ -1128,7 +1131,7 @@ form input:focus {
 
     position: fixed;
 
-    top: 230px;
+    top: 280px;
 
     width: 180px;
     height: 410px;

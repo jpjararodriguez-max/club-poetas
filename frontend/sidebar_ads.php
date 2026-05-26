@@ -75,7 +75,7 @@ $ads = [
         "image" => "./img/publicidad2.png",
         "link" => "#",
         "side" => "right",
-        "plan" => "basico"
+        "plan" => "premium"
     ]
 
 ];
