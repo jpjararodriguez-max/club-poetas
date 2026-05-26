@@ -13,6 +13,19 @@ $currentPage = basename($_SERVER['PHP_SELF'], ".php");
 
 $plans = [
 
+    "no_dinero" => [
+
+        "duration" => 0,
+        "price" => 0,
+
+        "pages" => [
+            ""
+        ],
+
+        "views" => "0 - 0"
+    ],
+
+
     "basico" => [
 
         "duration" => 7,
@@ -41,7 +54,7 @@ $plans = [
 
     "premium" => [
 
-        "duration" => 11,
+        "duration" => 13,
         "price" => 240000,
 
         "pages" => [
@@ -68,7 +81,7 @@ $ads = [
         "image" => "./img/publicidad1-nueva.png",
         "link" => "#",
         "side" => "left",
-        "plan" => "premium"
+        "plan" => "no_dinero"
     ],
 
     [
