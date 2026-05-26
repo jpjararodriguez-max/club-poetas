@@ -1,16 +1,33 @@
-<div class="left-global-ad">
+<?php
 
-    <a href="#">
-        <img src="./img/publicidad1-nueva.png" alt="Publicidad">
-    </a>
+$ads = [
 
-</div>
+    [
+        "image" => "./img/publicidad1-nueva.png",
+        "link" => "#",
+        "side" => "left"
+    ],
 
+    [
+        "image" => "./img/publicidad2.png",
+        "link" => "#",
+        "side" => "right"
+    ]
 
-<div class="right-global-ad">
+];
 
-    <a href="#">
-        <img src="./img/publicidad2.png" alt="Publicidad derecha">
-    </a>
+?>
 
-</div>
+<?php foreach ($ads as $ad): ?>
+
+    <div class="<?= $ad['side']; ?>-global-ad">
+
+        <a href="<?= $ad['link']; ?>">
+
+            <img src="<?= $ad['image']; ?>" alt="Publicidad">
+
+        </a>
+
+    </div>
+
+<?php endforeach; ?>
