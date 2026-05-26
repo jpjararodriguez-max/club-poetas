@@ -45,6 +45,7 @@ $stats = $numeros[$claveJugador] ?? null;
 </head>
 
 <body class="jugador-body">
+<?php include "sidebar_ads.php"; ?>
 
 <header class="dash-header-pro">
     <h1>⚽ Jugador</h1>

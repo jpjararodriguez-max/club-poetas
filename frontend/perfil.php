@@ -18,6 +18,7 @@ $usuario = $resultado->fetch_assoc();
 </head>
 
 <body class="dashboard-body">
+<?php include "sidebar_ads.php"; ?>
 
 <header class="dash-header-pro">
     <h1>👤 Mi Perfil</h1>

@@ -1,6 +1,13 @@
 <?php
 
 /* =========================================
+   DETECTAR PÁGINA ACTUAL
+========================================= */
+
+$currentPage = basename($_SERVER['PHP_SELF'], ".php");
+
+
+/* =========================================
    PLANES PUBLICITARIOS
 ========================================= */
 
@@ -41,7 +48,7 @@ $plans = [
             "dashboard",
             "perfil",
             "poemas",
-            "buscar",
+            "jugador",
             "comunidad"
         ],
 
@@ -73,25 +80,34 @@ $ads = [
 
 ];
 
-?>
 
+/* =========================================
+   MOSTRAR ANUNCIOS
+========================================= */
 
-<?php foreach ($ads as $ad): ?>
-
-<?php
+foreach ($ads as $ad) {
 
     $planData = $plans[$ad['plan']];
 
+    /* Revisar si el anuncio puede salir
+       en la página actual */
+
+    if (in_array($currentPage, $planData['pages'])) {
+
+        echo '
+
+        <div class="' . $ad['side'] . '-global-ad">
+
+            <a href="' . $ad['link'] . '">
+
+                <img src="' . $ad['image'] . '" alt="Publicidad">
+
+            </a>
+
+        </div>
+
+        ';
+    }
+}
+
 ?>
-
-<div class="<?= $ad['side']; ?>-global-ad">
-
-    <a href="<?= $ad['link']; ?>">
-
-        <img src="<?= $ad['image']; ?>" alt="Publicidad">
-
-    </a>
-
-</div>
-
-<?php endforeach; ?>
