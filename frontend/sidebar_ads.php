@@ -88,8 +88,25 @@ $ads = [
         "image" => "./img/publicidad2.png",
         "link" => "#",
         "side" => "right",
-        "plan" => "premium"
+        "plan" => "no_dinero"
+    ],
+
+    
+    [
+        "image" => "./img/publicidadmercancia1.png",
+        "link" => "#",
+        "side" => "left",
+        "plan" => "no_dinero"
+    ],
+
+    [
+        "image" => "./img/publicidadmercancia2.png",
+        "link" => "#",
+        "side" => "right",
+        "plan" => "no_dinero"
     ]
+
+
 
 ];
 
@@ -109,7 +126,7 @@ foreach ($ads as $ad) {
 
         echo '
 
-        <div class="' . $ad['side'] . '-global-ad">
+        <div class="' . $ad['side'] . '-global-ad ad-item ad-' . $ad['side'] . '">
 
             <a href="' . $ad['link'] . '">
 
@@ -124,3 +141,69 @@ foreach ($ads as $ad) {
 }
 
 ?>
+
+<script>
+
+/* TOMAR TODOS LOS BANNERS */
+
+const leftAds = document.querySelectorAll(".ad-left");
+const rightAds = document.querySelectorAll(".ad-right");
+
+
+/* MOSTRAR SOLO EL PRIMERO */
+
+leftAds.forEach((ad, index) => {
+
+    if (index !== 0) {
+        ad.style.display = "none";
+    }
+
+});
+
+rightAds.forEach((ad, index) => {
+
+    if (index !== 0) {
+        ad.style.display = "none";
+    }
+
+});
+
+
+/* ROTACIÓN IZQUIERDA */
+
+let leftIndex = 0;
+
+setInterval(() => {
+
+    leftAds[leftIndex].style.display = "none";
+
+    leftIndex++;
+
+    if (leftIndex >= leftAds.length) {
+        leftIndex = 0;
+    }
+
+    leftAds[leftIndex].style.display = "block";
+
+}, 10000);
+
+
+/* ROTACIÓN DERECHA */
+
+let rightIndex = 0;
+
+setInterval(() => {
+
+    rightAds[rightIndex].style.display = "none";
+
+    rightIndex++;
+
+    if (rightIndex >= rightAds.length) {
+        rightIndex = 0;
+    }
+
+    rightAds[rightIndex].style.display = "block";
+
+}, 10000);
+
+</script>
