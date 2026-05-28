@@ -174,5 +174,36 @@ form.addEventListener("submit", function (e) {
 });
 });
 
+// ===========================================================
+// MOSTRAR / OCULTAR CONTRASEÑA
+// ===========================================================
+
+const passwordInput = document.getElementById("password");
+const togglePassword = document.getElementById("togglePassword");
+
+/* MANTENER PRESIONADO */
+
+togglePassword.addEventListener("mousedown", () => {
+
+    passwordInput.type = "text";
+
+});
+
+/* SOLTAR CLICK */
+
+togglePassword.addEventListener("mouseup", () => {
+
+    passwordInput.type = "password";
+
+});
+
+/* SI EL MOUSE SALE DEL OJO */
+
+togglePassword.addEventListener("mouseleave", () => {
+
+    passwordInput.type = "password";
+
+});
+
 
 
