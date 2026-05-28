@@ -80,7 +80,7 @@ jugadores.forEach(j => {
 const correoPersonal = /^[a-zA-Z0-9._%+-]+@(gmail\.com|outlook\.com|icloud\.com)$/;
 
 // Correos corporativos (NO gmail, NO outlook, NO icloud)
-const correoCorporativo = /^[a-zA-Z0-9._%+-]+@((?!gmail|outlook|icloud)[a-zA-Z0-9-]+)\.(com|co|org|net)$/;
+const correoCorporativo = /^[a-zA-Z0-9._%+-]+@(?!(gmail|hotmail|yahoo|outlook|icloud|live|proton|aol)\.)[a-zA-Z0-9-]+\.(com|net|org|co|mx|es|us|edu)$/i;
 
 // ===========================================================
 // VALIDAR CONTRASEÑA SEGURA
@@ -112,10 +112,19 @@ form.addEventListener("submit", function (e) {
     if (perfilUsuario === "PERIODISTA DEPORTIVO") {
         if (!correoCorporativo.test(correo)) {
             alert(
-                "Correo inválido para PERIODISTA.\n\n" +
-                "Solo se permiten correos corporativos.\n" +
-                "Ejemplo: nombre@empresa.com"
-            );
+                  "Correo inválido para PERIODISTA.\n\n" +
+                  "Solo se permiten correos corporativos.\n\n" +
+
+                "Dominios permitidos:\n" +
+                "- nombre@empresa.com\n" +
+                "- nombre@empresa.net\n" +
+                "- nombre@empresa.org\n" +
+                "- nombre@empresa.co\n" +
+                "- nombre@empresa.mx\n" +
+                "- nombre@empresa.es\n" +
+                "- nombre@empresa.us\n" +
+                "- nombre@empresa.edu"
+                 );
             return;
         }
     } else {
@@ -164,10 +173,6 @@ form.addEventListener("submit", function (e) {
     }
 });
 });
-
-
-
-
 
 
 
