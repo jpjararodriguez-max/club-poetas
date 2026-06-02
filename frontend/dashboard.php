@@ -54,6 +54,7 @@ require_once "../backend/proteger.php";
             <a href="#">Puntaje</a>
             <a href="#">Poemas</a>
             <a href="#">Comunidad</a>
+            <a href="nosotros.php">Nosotros</a>
             <a href="perfil.php">Mi Perfil</a>
             <a href="favoritos.php">Mis Favoritos</a>
         </div>

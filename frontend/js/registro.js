@@ -175,35 +175,25 @@ form.addEventListener("submit", function (e) {
 });
 
 // ===========================================================
-// MOSTRAR / OCULTAR CONTRASEÑA
+// MOSTRAR / OCULTAR PASSWORD
 // ===========================================================
 
 const passwordInput = document.getElementById("password");
 const togglePassword = document.getElementById("togglePassword");
 
-/* MANTENER PRESIONADO */
+togglePassword.addEventListener("click", () => {
 
-togglePassword.addEventListener("mousedown", () => {
+    if (passwordInput.type === "password") {
 
-    passwordInput.type = "text";
+        passwordInput.type = "text";
 
-});
+        togglePassword.textContent = "◉";
 
-/* SOLTAR CLICK */
+    } else {
 
-togglePassword.addEventListener("mouseup", () => {
+        passwordInput.type = "password";
 
-    passwordInput.type = "password";
-
-});
-
-/* SI EL MOUSE SALE DEL OJO */
-
-togglePassword.addEventListener("mouseleave", () => {
-
-    passwordInput.type = "password";
+        togglePassword.textContent = "◎";
+    }
 
 });
-
-
-
