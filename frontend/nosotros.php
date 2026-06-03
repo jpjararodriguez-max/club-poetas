@@ -57,15 +57,9 @@ session_start();
         </p>
 
         <p>
-        Merece contexto.
+        Merece contexto. Merece memoria.  Merece evidencia.
         </p>
-        <p>
-        Merece memoria.
-        </p>
-        <p>
-        Merece evidencia.
-        </p>
-    
+        
         <p>
         Por esa razón nació "El Club de los Poetas del Fútbol". 
         </p>
@@ -73,33 +67,22 @@ session_start();
         <p>
         Un proyecto construido sobre una convicción simple: la pasión merece verdad.
         </p>
-
-        <p>
-        Durante más de dos años se realizó un proceso de investigación, recopilación y validación de información proveniente solo de organizaciones oficiales y certificadas como FIFA y sus organismos asociados (UEFA, CONMEBOL etc); IFFHS, Transfermarkt, Opta Data, Data Sports Group, como fuentes especializadas del sector deportivo. A partir de este modelo de verificación, centrado en competiciones oficiales de primer nivel, hemos construido una base de información sólida, consistente y transparente, orientada a ofrecer el mayor nivel posible de precisión y confiabilidad para nuestros usuarios, alcanzando uno de los mayores niveles de consistencia, trazabilidad y verificación dentro de nuestro modelo de análisis.
-        </p>
-    
+        
         <p>
         Nuestro objetivo es proporcionar las herramientas necesarias para que cada aficionado, periodista o amante del deporte pueda construir sus propias conclusiones basándose en evidencia verificable. Creemos que los datos no reemplazan la pasión, pero sí pueden protegerla de la desinformación.
 
         Porque las leyendas merecen ser recordadas con hechos y no con rumores.
         </p>
         
-
-
         <p>La pasión inspira el debate.</p><p>La evidencia le da valor.</p>
 
-
-    <p class="frase-final">
-
+        <p class="frase-final">
         Posdata:   “El olvido está lleno de memoria”    Mario Benedetti... 
+        </p>
 
-    </p>
-
-    <p class="firma-club">
-
-       CPE
-
-</p>
+        <p class="firma-club">
+        CPF
+        </p>
 
     </div>
 
@@ -125,7 +108,38 @@ session_start();
                 Convertirnos en una referencia para aficionados y periodistas deportivos que buscan comprender el fútbol a través de información histórica, estadística y verificable.
             </p>
 
-        </div>
+            </div>
+    
+    
+    <div class="metodologia-card">
+
+    <h2>METODOLOGÍA</h2>
+
+    <p>
+
+        Durante más de dos años se realizó un proceso de investigación,
+        recopilación y validación de información proveniente exclusivamente
+        de organizaciones oficiales y certificadas como FIFA y sus organismos
+        asociados (UEFA, CONMEBOL, entre otros), IFFHS, Transfermarkt,
+        Opta Data y Data Sports Group, reconocidas como fuentes especializadas
+        dentro del sector deportivo.
+
+    </p>
+
+    <p>
+
+        A partir de este modelo de verificación, centrado en competiciones
+        oficiales de primer nivel, hemos construido una base de información
+        sólida, consistente y transparente, orientada a ofrecer el mayor
+        nivel posible de precisión y confiabilidad para nuestros usuarios,
+        alcanzando elevados estándares de consistencia, trazabilidad y
+        verificación dentro de nuestro modelo de análisis.
+
+    </p>
+
+    </div>
+        
+    </div>
 
     </div>
 

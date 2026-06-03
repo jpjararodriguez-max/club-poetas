@@ -1268,7 +1268,7 @@ form input:focus {
 
     max-width: 1100px;
 
-    margin: 40px auto;
+    margin: 25px auto;
 
     padding: 20px;
 }
@@ -1301,9 +1301,9 @@ form input:focus {
 
     margin-bottom: 40px;
 
-    max-width: 800px;
+    max-width: 810px;
 
-    margin: 0 auto 40px auto;
+    margin: 0 auto 30px auto;
 }
 
 .nosotros-card h1 {
@@ -1342,14 +1342,16 @@ form input:focus {
     justify-content: center;
 
     flex-wrap: wrap;
+
+    margin-bottom: 30px;
 }
 
 .mision-card,
 .vision-card {
 
-    flex: 1;
+    width: 380px;
 
-    min-width: 320px;
+    min-width: 380px;
 
     background: linear-gradient(
         145deg,
@@ -1365,7 +1367,7 @@ form input:focus {
 
     padding: 30px;
 
-    text-align: center;
+    text-align: justify;
 
     box-shadow:
         0 0 20px rgba(198,163,74,0.12);
@@ -1374,9 +1376,12 @@ form input:focus {
 .mision-card h2,
 .vision-card h2 {
 
+    text-align: center; 
+
     color: #C6A34A;
 
     margin-bottom: 15px;
+    
 }
 
 .mision-card p,
@@ -1385,6 +1390,48 @@ form input:focus {
     color: #DDE3F0;
 
     line-height: 1.7;
+}
+
+.metodologia-card {
+
+    max-width: 835px;
+
+    margin: 0 auto;
+
+    background: linear-gradient(
+        145deg,
+        #0C1A45,
+        #081233
+    );
+
+    border: 2px solid #C6A34A;
+
+    border-radius: 20px;
+
+    padding: 35px;
+
+    box-shadow:
+        0 0 20px rgba(198,163,74,0.12);
+}
+
+.metodologia-card h2 {
+
+    color: #C6A34A;
+
+    text-align: center;
+
+    margin-bottom: 25px;
+}
+
+.metodologia-card p {
+
+    color: #DDE3F0;
+
+    text-align: justify;
+
+    line-height: 1.9;
+
+    margin-bottom: 20px;
 }
 
 /* =========================================
@@ -1406,13 +1453,17 @@ form input:focus {
 
 .nosotros-subtitulo {
 
-    color: #DDE3F0;
+    color: #C6A34A !important;
 
-    letter-spacing: 4px;
+    letter-spacing: 5px;
 
-    font-size: 12px;
+    font-size: 13px;
 
-    margin-bottom: 15px;
+    font-weight: 600;
+
+    text-transform: uppercase;
+
+    margin-bottom: 25px;
 }
 
 .frase-destacada {
@@ -1433,13 +1484,13 @@ form input:focus {
 
 .manifiesto {
 
-    text-align: left;
+    text-align: justify;
 
-    max-width: 850px;
+    max-width: 720px;
 
     margin: auto;
 
-    line-height: 2;
+    line-height: 2.1;
 
     color: #DDE3F0;
 }
