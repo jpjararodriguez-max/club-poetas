@@ -11,10 +11,17 @@ if (!$correo || !$password) {
 }
 
 $stmt = $conn->prepare("
-    SELECT id, perfil, nombre_completo, correo, jugador_favorito, password
+    SELECT id,
+           perfil,
+           nombre_completo,
+           correo,
+           jugador_favorito,
+           password,
+           primer_ingreso
     FROM usuarios
     WHERE correo = ?
 ");
+
 $stmt->bind_param("s", $correo);
 $stmt->execute();
 
@@ -40,6 +47,13 @@ $_SESSION["correo"] = $usuario["correo"];
 $_SESSION["jugador"] = $usuario["jugador_favorito"];
 
 
-echo "OK";
+if ($usuario["primer_ingreso"] == 1) {
 
+    echo "CARNET";
+
+} else {
+
+    echo "OK";
+
+}
 

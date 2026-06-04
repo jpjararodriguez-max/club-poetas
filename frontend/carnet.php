@@ -1,5 +1,18 @@
 <?php
 require_once "../backend/proteger.php";
+require_once "../backend/conexion.php";
+
+if (isset($_SESSION["usuario_id"])) {
+
+    $stmt = $conn->prepare("
+        UPDATE usuarios
+        SET primer_ingreso = 0
+        WHERE id = ?
+    ");
+
+    $stmt->bind_param("i", $_SESSION["usuario_id"]);
+    $stmt->execute();
+}
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -41,7 +54,5 @@ require_once "../backend/proteger.php";
 
     <script src="js/carnet.js"></script>
 
-</body>
-</html>
-
-
+ </body>
+ </html>

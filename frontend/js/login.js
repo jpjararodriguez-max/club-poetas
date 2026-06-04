@@ -6,13 +6,13 @@ form.addEventListener("submit", function (e) {
     const correo = document.getElementById("correo").value.trim();
     const password = document.getElementById("password").value.trim();
 
-    // 1️⃣ VALIDAR CAMPOS VACÍOS
+    // 1️ VALIDAR CAMPOS VACÍOS
     if (!correo || !password) {
         alert("Debes ingresar correo y contraseña");
         return;
     }
 
-    // 2️⃣ ENVIAR AL BACKEND
+    // 2️ ENVIAR AL BACKEND
     fetch("../backend/login.php", {
         method: "POST",
         headers: {
@@ -20,20 +20,22 @@ form.addEventListener("submit", function (e) {
         },
         body: `correo=${encodeURIComponent(correo)}&password=${encodeURIComponent(password)}`
     })
+
     .then(res => res.text())
     .then(data => {
-        if (data.trim() === "OK") {
-            window.location.href = "dashboard.php";
-        } else {
-            alert(data);
-        }
+    data = data.trim();
+
+    if (data === "CARNET") {
+
+        window.location.href = "carnet.php";
+
+    } else if (data === "OK") {
+
+        window.location.href = "dashboard.php";
+
+    } else {
+        alert(data);
+    }
     });
-});
 
-
-
-
-
-
-
-
+ });
