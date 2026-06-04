@@ -98,14 +98,14 @@ p {
 /* FORMULARIO */
 .form-container {
     max-width: 420px;
-    width: 100%;             /* vision */
-    margin: 0 20px;        
+    width: 420%;             /* vision */      
     background-color: #0C1A45;
     padding: 40px;
     border-radius: 14px;
     box-shadow: 0px 0px 18px rgba(0,0,0,0.35);
     text-align: left;
 }
+
 
 .form-title {
     text-align: center;
@@ -1151,6 +1151,29 @@ form input:focus {
 
 .reset-box button:hover {
     background-color: #b8962e;
+}
+
+/* ===== UNIFICAR MEDIDAS FORGOT Y RESET ===== */
+
+.forgot-box form,
+.reset-box form {
+
+    width: 392px;
+
+    margin: 0 auto;
+
+}
+
+.forgot-box input,
+.forgot-box button,
+.reset-box input,
+.reset-box button {
+
+    width: 100%;
+
+    height: 48px;
+
+    box-sizing: border-box;
 }
 
 /* FLECHA LADO IZQUIERDO CENTRADA */
