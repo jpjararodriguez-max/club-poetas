@@ -59,4 +59,4 @@ togglePassword.addEventListener("click", () => {
 
     }
 
-});
+ });

@@ -55,5 +55,4 @@ if ($usuario["primer_ingreso"] == 1) {
 
     echo "OK";
 
-}
-
+ }

@@ -34,6 +34,4 @@ if ($stmt->execute()) {
 } else {
     http_response_code(500);
     echo "Error al insertar";
-}
-
-
+ }

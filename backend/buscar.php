@@ -12,4 +12,4 @@ foreach ($jugadores as $clave => $datos) {
     }
 }
 
-echo json_encode($resultados);
+ echo json_encode($resultados);

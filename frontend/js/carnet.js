@@ -20,6 +20,4 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
         iconoVerificado.style.display = "none";
     }
-});
-
-
+ });
