@@ -113,6 +113,24 @@ club-poetas/
 └── README.md
 ```
 
+## Base de Datos
+
+El script de la base de datos se encuentra en la carpeta:
+
+```text
+database/club_poetas.sql
+```
+
+Este archivo contiene la estructura de la base de datos utilizada por el proyecto, incluyendo las tablas necesarias para el funcionamiento del sistema.
+
+Para importar la base de datos:
+
+1. Abrir **phpMyAdmin**.
+2. Crear una base de datos llamada **club_poetas**.
+3. Seleccionar la opción **Importar**.
+4. Elegir el archivo `club_poetas.sql`.
+5. Ejecutar la importación.
+
 ---
 
 # 💻 Requisitos del Sistema
