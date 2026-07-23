@@ -208,43 +208,43 @@ A continuación se presentan algunas de las principales interfaces desarrolladas
 
 ## Página de Inicio
 
-> *(Agregar aquí una captura de la Landing Page o pantalla principal.)*
+![Landing Page](docs/images/landing.png)
 
 ---
 
 ## Inicio de Sesión
 
-> *(Agregar aquí una captura de la pantalla de inicio de sesión.)*
+![Inicio de Sesión](docs/images/login.png)
 
 ---
 
 ## Registro de Usuario
 
-> *(Agregar aquí una captura del formulario de registro.)*
+![Registro](docs/images/registro.png)
 
 ---
 
 ## Dashboard
 
-> *(Agregar aquí una captura del panel principal del usuario.)*
+![Dashboard](docs/images/dashboard.png)
 
 ---
 
 ## Consulta de Jugadores
 
-> *(Agregar aquí una captura de la búsqueda de jugadores.)*
+![Consulta](docs/images/consulta.png)
 
 ---
 
 ## Jugadores Favoritos
 
-> *(Agregar aquí una captura del módulo de favoritos.)*
+![Favoritos](docs/images/favoritos.png)
 
 ---
 
 ## Perfil de Usuario
 
-> *(Agregar aquí una captura del perfil del usuario.)*
+![Perfil](docs/images/perfil.png)
 
 ---
 
