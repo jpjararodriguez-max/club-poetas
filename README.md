@@ -208,43 +208,43 @@ A continuación se presentan algunas de las principales interfaces desarrolladas
 
 ## Página de Inicio
 
-![Landing Page](docs/images/landing.png.png)
+![Landing Page](documentos/docs/landing.png.png)
 
 ---
 
 ## Inicio de Sesión
 
-![Inicio de Sesión](docs/images/login.png.png)
+![Inicio de Sesión](documentos/docs/login.png.png)
 
 ---
 
 ## Registro de Usuario
 
-![Registro](docs/images/registro.png.png)
+![Registro](documentos/docs/registro.png.png)
 
 ---
 
 ## Dashboard
 
-![Dashboard](docs/images/dashboard.png.png)
+![Dashboard](documentos/docs/dashboard.png.png)
 
 ---
 
 ## Consulta de Jugadores
 
-![Consulta](docs/images/consulta.png.png)
+![Consulta](documentos/docs/consulta.png.png)
 
 ---
 
 ## Jugadores Favoritos
 
-![Favoritos](docs/images/favoritos.png.png)
+![Favoritos](documentos/docs/favoritos.png.png)
 
 ---
 
 ## Perfil de Usuario
 
-![Perfil](docs/images/perfil.png.png)
+![Perfil](documentos/docs/perfil.png.png)
 
 ---
 
