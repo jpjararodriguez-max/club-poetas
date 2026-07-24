@@ -24,7 +24,7 @@ $stmt->bind_param("sssss", $perfil, $nombre, $correo, $passwordHash, $jugador);
 
 if ($stmt->execute()) {
 
-    // ✅ CREAR SESIÓN AUTOMÁTICA AL REGISTRAR
+    //  CREAR SESIÓN AUTOMÁTICA AL REGISTRAR
     $_SESSION["nombre"] = $nombre;
     $_SESSION["perfil"] = $perfil;
     $_SESSION["correo"] = $correo;

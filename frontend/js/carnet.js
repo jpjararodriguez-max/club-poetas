@@ -2,8 +2,8 @@
 // carnet.js (VERSIÓN CORRECTA)
 // ================================
 
-// Este JS SOLO controla comportamiento visual
-// Los datos ya vienen desde PHP (sesión)
+// JS SOLO controla comportamiento visual
+// Los datos ya vienen desde PHP
 
 // ================================
 // MOSTRAR ICONO VERIFICADO

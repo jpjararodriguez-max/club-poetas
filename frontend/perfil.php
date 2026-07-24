@@ -62,19 +62,5 @@ $usuario = $resultado->fetch_assoc();
     </div>
 
 </main>
-
-<script>
-function activarEdicion() {
-    document.querySelectorAll(".perfil-item input").forEach(input => {
-        input.disabled = false;
-    });
-
-    document.getElementById("guardarBtn").style.display = "inline-block";
-}
-
-function guardarCambios() {
-    alert("Luego conectamos esto con base de datos 🔥");
-}
-</script>
 </body>
 </html>
