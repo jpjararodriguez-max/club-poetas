@@ -324,7 +324,7 @@ Las siguientes funcionalidades han sido planteadas para futuras versiones del pr
 
 # 👨‍💻 Autor
 
-**Juan Pablo Jara,illo Rodríguez**
+**Juan Pablo Jaramillo Rodríguez**
 
 Aprendiz del programa **Análisis y Desarrollo de Software (ADSO)** del **Servicio Nacional de Aprendizaje (SENA)**.
 
@@ -342,7 +342,7 @@ El código fuente y el diseño del proyecto pertenecen a su autor. Su uso con fi
 
 # © Derechos de Autor
 
-© 2026 Juan Pablo Jara Rodríguez.
+© 2026 Juan Pablo Jaramillo Rodríguez.
 
 Todos los derechos reservados.
 
