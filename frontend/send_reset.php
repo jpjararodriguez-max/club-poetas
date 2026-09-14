@@ -1,43 +1,51 @@
 <?php
+ini_set('display_errors', 0);
+ini_set('log_errors', 1);
+
 require "../backend/conexion.php";
 
-$correo = $_POST["correo"] ?? null;
+$correo = trim($_POST["correo"] ?? '');
+$mensaje = "Si el correo ingresado está registrado en la plataforma, se generara un enlace de recuperación.";
+$link = null;
 
-if (!$correo) {
-    die("Correo no válido");
-}
+if (!empty($correo) && filter_var($correo, FILTER_VALIDATE_EMAIL)) {
 
-// Buscar usuario
-$stmt = $conn->prepare("SELECT id FROM usuarios WHERE correo = ?");
-$stmt->bind_param("s", $correo);
-$stmt->execute();
-$result = $stmt->get_result();
+    $stmt = $conn->prepare("SELECT id FROM usuarios WHERE correo = ? LIMIT 1");
+    if ($stmt) {
+        $stmt->bind_param("s", $correo);
+        $stmt->execute();
+        $result = $stmt->get_result();
 
-if ($result->num_rows === 0) {
-    $mensaje = "❌ Correo no registrado";
+        if ($result->num_rows > 0) {
+            $usuario = $result->fetch_assoc();
+            $user_id = $usuario["id"];
+
+            // Generar token criptográficamente seguro
+            $token = bin2hex(random_bytes(32));
+
+            // Guardar el token en la base de datos
+            $stmtUpdate = $conn->prepare("UPDATE usuarios SET reset_token = ? WHERE id = ?");
+            if ($stmtUpdate) {
+                $stmtUpdate->bind_param("si", $token, $user_id);
+                $stmtUpdate->execute();
+                $stmtUpdate->close();
+
+                // Simulación de enlace para entorno local/desarrollo
+                $link = "reset_password.php?token=" . $token;
+            }
+        }
+        $stmt->close();
+    }
 } else {
-
-    $usuario = $result->fetch_assoc();
-    $user_id = $usuario["id"];
-
-    // Generar token
-    $token = bin2hex(random_bytes(50));
-
-    // Guardarlo
-    $stmt = $conn->prepare("UPDATE usuarios SET reset_token = ? WHERE id = ?");
-    $stmt->bind_param("si", $token, $user_id);
-    $stmt->execute();
-
-    // Simulación link
-    $mensaje = "✅ Enlace generado correctamente";
-    $link = "reset_password.php?token=" . $token;
+    $mensaje = "Por favor, ingresa un correo electrónico válido.";
 }
 ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Enlace enviado</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enlace enviado - El Club de los Poetas del Fútbol</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -46,12 +54,13 @@ if ($result->num_rows === 0) {
 
     <h2>📩 Recuperación</h2>
 
-    <p><?php echo $mensaje; ?></p>
+    <p><?= htmlspecialchars($mensaje, ENT_QUOTES, 'UTF-8') ?></p>
 
-    <?php if (isset($link)) { ?>
-        <a href="<?php echo $link; ?>" class="btn-link">Ir a cambiar contraseña</a>
-    <?php } ?>
+    <?php if ($link): ?>
+        <a href="<?= htmlspecialchars($link, ENT_QUOTES, 'UTF-8') ?>" class="btn-link">Ir a cambiar contraseña</a>
+    <?php endif; ?>
 
+    <br><br>
     <a href="login.html" class="back-link">← Volver al login</a>
 
 </div>

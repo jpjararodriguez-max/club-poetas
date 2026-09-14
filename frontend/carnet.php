@@ -2,7 +2,7 @@
 require_once "../backend/proteger.php";
 require_once "../backend/conexion.php";
 
-if (isset($_SESSION["usuario_id"])) {
+if (isset($_SESSION["usuario_id"]) && !empty($_SESSION["usuario_id"])) {
 
     $stmt = $conn->prepare("
         UPDATE usuarios
@@ -10,15 +10,19 @@ if (isset($_SESSION["usuario_id"])) {
         WHERE id = ?
     ");
 
-    $stmt->bind_param("i", $_SESSION["usuario_id"]);
-    $stmt->execute();
+    if ($stmt) {
+        $stmt->bind_param("i", $_SESSION["usuario_id"]);
+        $stmt->execute();
+        $stmt->close();
+    }
 }
 ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Carnet del Club</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carnet del Club - El Club de los Poetas del Fútbol</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/carnet.css">
 </head>
@@ -34,13 +38,12 @@ if (isset($_SESSION["usuario_id"])) {
 
         <div class="carnet-card">
 
-         <h3 id="perfilTipo"><?= $_SESSION["perfil"] ?></h3>
+            <h3 id="perfilTipo"><?= htmlspecialchars($_SESSION["perfil"] ?? '', ENT_QUOTES, 'UTF-8') ?></h3>
 
-          <p><strong>Nombre:</strong> <span id="nombreUsuario"><?= $_SESSION["nombre"] ?></span></p>
-          <p><strong>Correo:</strong> <span id="correoUsuario"><?= $_SESSION["correo"] ?></span></p>
-          <p><strong>Jugador Favorito:</strong> <span id="jugadorUsuario"><?= $_SESSION["jugador"] ?? '' ?></span></p>
+            <p><strong>Nombre:</strong> <span id="nombreUsuario"><?= htmlspecialchars($_SESSION["nombre"] ?? '', ENT_QUOTES, 'UTF-8') ?></span></p>
+            <p><strong>Correo:</strong> <span id="correoUsuario"><?= htmlspecialchars($_SESSION["correo"] ?? '', ENT_QUOTES, 'UTF-8') ?></span></p>
+            <p><strong>Jugador Favorito:</strong> <span id="jugadorUsuario"><?= htmlspecialchars($_SESSION["jugador"] ?? '', ENT_QUOTES, 'UTF-8') ?></span></p>
             
-
             <!-- ICONO VERIFICADO -->
             <div class="verificado">
                 <img src="img/verificado.png" alt="Verificado">
@@ -54,5 +57,5 @@ if (isset($_SESSION["usuario_id"])) {
 
     <script src="js/carnet.js"></script>
 
- </body>
- </html>
+</body>
+</html>

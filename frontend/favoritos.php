@@ -6,7 +6,8 @@ require_once "../backend/proteger.php";
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Mis Favoritos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Favoritos - Club de los Poetas del Fútbol</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
@@ -18,7 +19,7 @@ require_once "../backend/proteger.php";
 </header>
 
 <?php if (isset($_GET["guardado"])): ?>
-    <div style="color: #d4af37; text-align:center; margin: 10px;">
+    <div style="color: #d4af37; text-align:center; margin: 10px; font-weight: bold;">
         ✅ Favoritos guardados correctamente
     </div>
 <?php endif; ?>
@@ -45,7 +46,7 @@ require_once "../backend/proteger.php";
             <div class="jugador">Bobby Charlton</div>
             <div class="jugador">Gerd Muller</div>
             <div class="jugador">Eusebio</div>
-            <div class="jugador">Ronaldo Nazário</div>
+            <div class="jugador">Ronaldo Nazario</div>
             <div class="jugador">Zinedine Zidane</div>
             <div class="jugador">Lev Yashin</div>
             <div class="jugador">M.Neuer</div>
@@ -144,38 +145,53 @@ require_once "../backend/proteger.php";
 <script>
 let favoritos = [];
 
-//  CARGAR DESDE BD AL ENTRAR
+// CARGAR DESDE BD AL ENTRAR
 fetch("../backend/obtener_favoritos.php")
-.then(res => res.json())
+.then(res => {
+    if (!res.ok) throw new Error("Error al consultar favoritos");
+    return res.json();
+})
 .then(data => {
-    favoritos = data;
-    renderFavoritos();
-});
+    if (Array.isArray(data)) {
+        favoritos = data;
+        renderFavoritos();
+    }
+})
+.catch(err => console.error("Error cargando favoritos:", err));
 
 // SELECCIONAR
 document.querySelectorAll(".jugador").forEach(jugador => {
     jugador.addEventListener("click", () => {
+        let nombre = jugador.innerText.trim();
 
-        if (favoritos.includes(jugador.innerText)) return;
+        if (favoritos.includes(nombre)) return;
 
         if (favoritos.length >= 10) {
             alert("Solo puedes elegir 10 jugadores");
             return;
         }
 
-        favoritos.push(jugador.innerText);
+        favoritos.push(nombre);
         renderFavoritos();
     });
 });
 
-// MOSTRAR
 function renderFavoritos() {
     const lista = document.getElementById("lista-favoritos");
     lista.innerHTML = "";
 
     favoritos.forEach((nombre, index) => {
         const li = document.createElement("li");
-        li.innerHTML = `${nombre} <button onclick="eliminar(${index})">❌</button>`;
+        
+        const spanTexto = document.createElement("span");
+        spanTexto.textContent = nombre + " ";
+        
+        const btnEliminar = document.createElement("button");
+        btnEliminar.textContent = "❌";
+        btnEliminar.onclick = () => eliminar(index);
+
+        li.appendChild(spanTexto);
+        li.appendChild(btnEliminar);
         lista.appendChild(li);
     });
 

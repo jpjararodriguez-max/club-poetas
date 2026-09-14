@@ -2,18 +2,28 @@
 require_once "../backend/proteger.php";
 require_once "../backend/conexion.php";
 
-$correo = $_SESSION["correo"];
+$correo = $_SESSION["correo"] ?? '';
 
-$sql = "SELECT jugador_favorito FROM usuarios WHERE correo = '$correo'";
-$resultado = $conn->query($sql);
-$usuario = $resultado->fetch_assoc();
+if (!empty($correo)) {
+    $stmt = $conn->prepare("SELECT jugador_favorito FROM usuarios WHERE correo = ? LIMIT 1");
+    if ($stmt) {
+        $stmt->bind_param("s", $correo);
+        $stmt->execute();
+        $resultado = $stmt->get_result();
+        if ($usuario = $resultado->fetch_assoc()) {
+            $jugadorFavorito = $usuario['jugador_favorito'] ?? 'No definido';
+        }
+        $stmt->close();
+    }
+}
 ?>
 
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Mi Perfil</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Perfil - El Club de los Poetas del Fútbol</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
@@ -39,22 +49,22 @@ $usuario = $resultado->fetch_assoc();
 
             <div class="perfil-item">
                 <label>Nombre</label>
-                <input type="text" value="<?= $_SESSION['nombre'] ?>" disabled>
+                <input type="text" value="<?= htmlspecialchars($_SESSION['nombre'] ?? '', ENT_QUOTES, 'UTF-8') ?>" disabled>
             </div>
 
             <div class="perfil-item">
                 <label>Correo</label>
-                <input type="email" value="<?= $_SESSION['correo'] ?>" disabled>
+                <input type="email" value="<?= htmlspecialchars($_SESSION['correo'] ?? '', ENT_QUOTES, 'UTF-8') ?>" disabled>
             </div>
 
             <div class="perfil-item">
                 <label>Jugador Favorito</label>
-                <input type="text" value="<?= isset($usuario['jugador_favorito']) ? $usuario['jugador_favorito'] : 'No definido' ?>" disabled>
+                <input type="text" value="<?= htmlspecialchars($jugadorFavorito, ENT_QUOTES, 'UTF-8') ?>" disabled>
             </div>
 
             <div class="perfil-item">
                 <label>Perfil</label>
-                <input type="text" value="<?= $_SESSION['perfil'] ?>" disabled>
+                <input type="text" value="<?= htmlspecialchars($_SESSION['perfil'] ?? '', ENT_QUOTES, 'UTF-8') ?>" disabled>
             </div>
 
         </div>

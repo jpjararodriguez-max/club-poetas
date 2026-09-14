@@ -1,46 +1,40 @@
 <?php
+ini_set('display_errors', 0);
+ini_set('log_errors', 1);
+
 require_once "../backend/proteger.php";
 $jugadores = require_once "../backend/jugadores.php";
 
-/* 🔎 CAPTURAR BUSQUEDA */
+/* 🔎 CAPTURAR BÚSQUEDA */
 $busqueda = strtolower(trim($_GET['nombre'] ?? ""));
 
-/*  BUSCAR COINCIDENCIA FLEXIBLE */
+/* BUSCAR COINCIDENCIA FLEXIBLE */
 $jugador = null;
 $claveJugador = null;
 
-foreach ($jugadores as $clave => $datos) {
-    if (
-        strpos($clave, $busqueda) !== false ||
-        strpos(strtolower($datos["nombre"]), $busqueda) !== false
-    ) {
-        $jugador = $datos;
-        $claveJugador = $clave; //  GUARDA  LA CLAVE REAL
-        break;
+if (!empty($busqueda)) {
+    foreach ($jugadores as $clave => $datos) {
+        if (
+            strpos(strtolower($clave), $busqueda) !== false ||
+            strpos(strtolower($datos["nombre"] ?? ''), $busqueda) !== false
+        ) {
+            $jugador = $datos;
+            $claveJugador = $clave; // GUARDA LA CLAVE REAL
+            break;
+        }
     }
 }
 
-/*  SI NO ENCUENTRA */
-if (!$jugador) {
-    echo "<div style='color:#d4af37; text-align:center; margin-top:100px;'>
-            <h2> No se encontraron resultados</h2>
-            <p>Intenta buscar otro jugador</p>
-          </div>";
-    exit;
-}
-
-/*  CARGAR NUMEROS */
+/* CARGAR NÚMEROS Y ESTADÍSTICAS */
 $numeros = require_once "../backend/numeros_jugadores.php";
-
-$stats = $numeros[$claveJugador] ?? null;
+$stats = ($claveJugador && isset($numeros[$claveJugador])) ? $numeros[$claveJugador] : null;
 ?>
-
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title><?= $jugador["nombre"] ?></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?= htmlspecialchars($jugador["nombre"] ?? "Jugador no encontrado", ENT_QUOTES, 'UTF-8') ?> - El Club de los Poetas del Fútbol</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
@@ -48,9 +42,20 @@ $stats = $numeros[$claveJugador] ?? null;
 <?php include "sidebar_ads.php"; ?>
 
 <header class="dash-header-pro">
-    <h1>⚽ Jugador</h1>
+    <h1>⚽ Perfil del Jugador</h1>
     <a href="dashboard.php" class="btn">⬅ Volver</a>
 </header>
+
+<?php if (!$jugador): ?>
+    <main class="jugador-container">
+        <div style="color:#d4af37; text-align:center; margin: 80px auto; padding: 20px; background: rgba(0,0,0,0.4); border-radius: 10px;">
+            <h2>🔎 No se encontraron resultados</h2>
+            <p>Intenta buscar otro jugador desde el panel principal.</p>
+            <br>
+            <a href="dashboard.php" class="btn">Regresar al Buscador</a>
+        </div>
+    </main>
+<?php else: ?>
 
 <div class="jugador-nav">
 
@@ -61,7 +66,7 @@ $stats = $numeros[$claveJugador] ?? null;
     </div>
 
     <div class="mini-search">
-        <form action="jugador.php" method="GET">
+        <form action="jugador.php" method="GET" autocomplete="off">
             <input 
                 type="text" 
                 name="nombre"
@@ -80,27 +85,27 @@ $stats = $numeros[$claveJugador] ?? null;
 <div id="todo-section">
 
     <div class="jugador-header">
-        <h2><?= $jugador["nombre"] ?></h2>
-        <p class="frase">"<?= $jugador["frase"] ?>"</p>
+        <h2><?= htmlspecialchars($jugador["nombre"] ?? '', ENT_QUOTES, 'UTF-8') ?></h2>
+        <p class="frase">"<?= htmlspecialchars($jugador["frase"] ?? '', ENT_QUOTES, 'UTF-8') ?>"</p>
     </div>
 
     <div class="jugador-main">
 
         <div class="jugador-img card-hover">
-    <?php if (!empty($jugador['imagen'])): ?>
-        <img src="<?= $jugador['imagen'] ?>" alt="<?= $jugador['nombre'] ?>">
-    <?php else: ?>
-        ⚽
-    <?php endif; ?>
-</div>
+            <?php if (!empty($jugador['imagen'])): ?>
+                <img src="<?= htmlspecialchars($jugador['imagen'], ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($jugador['nombre'], ENT_QUOTES, 'UTF-8') ?>">
+            <?php else: ?>
+                ⚽
+            <?php endif; ?>
+        </div>
 
         <div class="jugador-info card-hover">
-            <p><strong>Edad:</strong> <?= $jugador["edad"] ?></p>
-            <p><strong>Nacionalidad:</strong> <?= $jugador["pais"] ?></p>
-            <p><strong>Posición:</strong> <?= $jugador["posicion"] ?></p>
+            <p><strong>Edad:</strong> <?= htmlspecialchars((string)($jugador["edad"] ?? ''), ENT_QUOTES, 'UTF-8') ?></p>
+            <p><strong>Nacionalidad:</strong> <?= htmlspecialchars($jugador["pais"] ?? '', ENT_QUOTES, 'UTF-8') ?></p>
+            <p><strong>Posición:</strong> <?= htmlspecialchars($jugador["posicion"] ?? '', ENT_QUOTES, 'UTF-8') ?></p>
 
             <p class="descripcion">
-                <?= $jugador["descripcion"] ?>
+                <?= htmlspecialchars($jugador["descripcion"] ?? '', ENT_QUOTES, 'UTF-8') ?>
             </p>
         </div>
 
@@ -110,25 +115,25 @@ $stats = $numeros[$claveJugador] ?? null;
 
         <div class="stat-card card-hover">
             <span>⚽</span>
-            <h3><?= $jugador["goles"] ?></h3>
+            <h3><?= htmlspecialchars((string)($jugador["goles"] ?? 0), ENT_QUOTES, 'UTF-8') ?></h3>
             <p>Goles</p>
         </div>
 
         <div class="stat-card card-hover">
             <span>🎯</span>
-            <h3><?= $jugador["asistencias"] ?></h3>
+            <h3><?= htmlspecialchars((string)($jugador["asistencias"] ?? 0), ENT_QUOTES, 'UTF-8') ?></h3>
             <p>Asistencias</p>
         </div>
 
         <div class="stat-card card-hover">
             <span>🧠</span>
-            <h3><?= $jugador["partidos"] ?></h3>
+            <h3><?= htmlspecialchars((string)($jugador["partidos"] ?? 0), ENT_QUOTES, 'UTF-8') ?></h3>
             <p>Partidos</p>
         </div>
 
         <div class="stat-card card-hover">
             <span>🏆</span>
-            <h3><?= $jugador["titulos"] ?></h3>
+            <h3><?= htmlspecialchars((string)($jugador["titulos"] ?? 0), ENT_QUOTES, 'UTF-8') ?></h3>
             <p>Títulos</p>
         </div>
 
@@ -137,9 +142,11 @@ $stats = $numeros[$claveJugador] ?? null;
     <div class="jugador-clubes card-hover">
         <h3>Clubes</h3>
         <ul>
-            <?php foreach ($jugador["clubes"] as $club): ?>
-                <li><?= $club ?></li>
-            <?php endforeach; ?>
+            <?php if (isset($jugador["clubes"]) && is_array($jugador["clubes"])): ?>
+                <?php foreach ($jugador["clubes"] as $club): ?>
+                    <li><?= htmlspecialchars($club, ENT_QUOTES, 'UTF-8') ?></li>
+                <?php endforeach; ?>
+            <?php endif; ?>
         </ul>
     </div>
 
@@ -149,41 +156,48 @@ $stats = $numeros[$claveJugador] ?? null;
     </div>
 
 </div>
+
 <div id="numeros-section" style="display:none;">
 
     <h2 style="color:#C6A34A;">📊 Análisis Detallado</h2>
 
-    <?php if($stats): ?>
+    <?php if ($stats): ?>
 
     <div class="numeros-box">
         <h3>Goles por club</h3>
         <ul>
-            <?php foreach ($stats["goles_club"] as $club => $goles): ?>
-                <li><?= $club ?> - <?= $goles ?> goles</li>
-            <?php endforeach; ?>
+            <?php if (isset($stats["goles_club"]) && is_array($stats["goles_club"])): ?>
+                <?php foreach ($stats["goles_club"] as $club => $goles): ?>
+                    <li><?= htmlspecialchars($club, ENT_QUOTES, 'UTF-8') ?> - <?= htmlspecialchars((string)$goles, ENT_QUOTES, 'UTF-8') ?> goles</li>
+                <?php endforeach; ?>
+            <?php endif; ?>
         </ul>
     </div>
 
     <div class="numeros-box">
         <h3>Tipos de gol</h3>
         <ul>
-            <?php foreach ($stats["goles_tipo"] as $tipo => $valor): ?>
-                <li><?= $tipo ?> - <?= $valor ?></li>
-            <?php endforeach; ?>
+            <?php if (isset($stats["goles_tipo"]) && is_array($stats["goles_tipo"])): ?>
+                <?php foreach ($stats["goles_tipo"] as $tipo => $valor): ?>
+                    <li><?= htmlspecialchars($tipo, ENT_QUOTES, 'UTF-8') ?> - <?= htmlspecialchars((string)$valor, ENT_QUOTES, 'UTF-8') ?></li>
+                <?php endforeach; ?>
+            <?php endif; ?>
         </ul>
     </div>
 
     <div class="numeros-box">
         <h3>Momentos clave</h3>
         <ul>
-            <?php foreach ($stats["momentos"] as $momento => $valor): ?>
-                <li><?= $momento ?> - <?= $valor ?></li>
-            <?php endforeach; ?>
+            <?php if (isset($stats["momentos"]) && is_array($stats["momentos"])): ?>
+                <?php foreach ($stats["momentos"] as $momento => $valor): ?>
+                    <li><?= htmlspecialchars($momento, ENT_QUOTES, 'UTF-8') ?> - <?= htmlspecialchars((string)$valor, ENT_QUOTES, 'UTF-8') ?></li>
+                <?php endforeach; ?>
+            <?php endif; ?>
         </ul>
     </div>
 
     <?php else: ?>
-        <p>No hay datos detallados disponibles</p>
+        <p style="padding: 15px; color: #888;">No hay datos detallados disponibles para este jugador.</p>
     <?php endif; ?>
 
 </div>
@@ -199,19 +213,25 @@ tabs.forEach(tab => {
         tabs.forEach(t => t.classList.remove("active"));
         tab.classList.add("active");
 
-        document.getElementById("todo-section").style.display = "none";
-        document.getElementById("numeros-section").style.display = "none";
+        const todoSection = document.getElementById("todo-section");
+        const numerosSection = document.getElementById("numeros-section");
 
-        if(tab.textContent === "Todo"){
-            document.getElementById("todo-section").style.display = "block";
+        if (todoSection) todoSection.style.display = "none";
+        if (numerosSection) numerosSection.style.display = "none";
+
+        if (tab.textContent.trim() === "Todo" && todoSection) {
+            todoSection.style.display = "block";
         }
 
-        if(tab.textContent === "Números"){
-            document.getElementById("numeros-section").style.display = "block";
+        if (tab.textContent.trim() === "Números" && numerosSection) {
+            numerosSection.style.display = "block";
         }
 
     });
 });
 </script>
+
+<?php endif; ?>
+
 </body>
 </html>

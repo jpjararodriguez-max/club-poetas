@@ -2,7 +2,8 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Registro - Club de los Poetas del Fútbol</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - El Club de los Poetas del Fútbol</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
@@ -17,13 +18,13 @@
 
     <p id="tipoUsuario" class="subtitle"></p>
 
-    <!--  desactiva validaciones automáticas del navegador -->
+    <!-- Formulario optimizado con control por JS -->
     <form id="registroForm" class="registro-form" autocomplete="off" novalidate>
 
-        <!-- 🔹 INPUT OCULTO PARA ENVIAR EL PERFIL AL BACKEND -->
+        <!-- INPUT OCULTO PARA ENVIAR EL PERFIL AL BACKEND -->
         <input type="hidden" name="perfil" id="perfil">
 
-        <label>Nombre y Apellido ó crea tu nombre en esta historia</label>
+        <label for="nombreCompleto">Nombre y Apellido ó crea tu nombre en esta historia</label>
         <input 
             type="text"
             id="nombreCompleto"
@@ -33,14 +34,14 @@
             required
         >
 
-        <label>Jugador favorito de la historia</label>
+        <label for="jugador">Jugador favorito de la historia</label>
         <select id="jugador" name="jugador" class="select-box" required>
             <option value="">-- Seleccione un jugador --</option>
         </select>
 
-        <label>Correo</label>
+        <label for="correo">Correo electrónico</label>
         <input 
-            type="text"
+            type="email"
             id="correo"
             name="correo"
             placeholder="tucorreo@gmail.com"
@@ -49,28 +50,26 @@
         >
 
         <div class="password-container">
+            <input 
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Crea una contraseña segura"
+                autocomplete="new-password"
+                required
+            >
 
-    <input 
-        type="password"
-        id="password"
-        name="password"
-        placeholder="Crea una contraseña segura"
-        autocomplete="new-password"
-        required
-    >
-
-    <span id="togglePassword" class="toggle-password">
-    ◎
-    </span>
-
-</div>
+            <span id="togglePassword" class="toggle-password">
+                ◎
+            </span>
+        </div>
 
         <button type="submit" class="btn btn-primary">Registrarse</button>
     </form>
 
 </div>
 
-<!-- versión forzada para evitar cache -->
+<!-- Carga del script con versionamiento anti-caché -->
 <script src="js/registro.js?v=FINAL"></script>
 
 </body>

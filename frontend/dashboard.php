@@ -5,6 +5,7 @@ require_once "../backend/proteger.php";
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panel Principal - Club de los Poetas del Fútbol</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -18,8 +19,8 @@ require_once "../backend/proteger.php";
         <h1>🏆 EL CLUB DE LOS POETAS DEL FÚTBOL 🖋️</h1>
 
         <div class="user-info">
-            Usuario: <strong><?= $_SESSION["nombre"] ?></strong> |
-            Perfil: <strong><?= $_SESSION["perfil"] ?></strong>
+            Usuario: <strong><?= htmlspecialchars($_SESSION["nombre"] ?? '', ENT_QUOTES, 'UTF-8') ?></strong> |
+            Perfil: <strong><?= htmlspecialchars($_SESSION["perfil"] ?? '', ENT_QUOTES, 'UTF-8') ?></strong>
         </div>
 
         <div class="header-buttons">
@@ -43,7 +44,7 @@ require_once "../backend/proteger.php";
             >
         </form>
 
-        <!--  SUGERENCIAS -->
+        <!-- SUGERENCIAS -->
         <div id="sugerencias" class="sugerencias-box"></div>
     </main>
 
@@ -79,26 +80,29 @@ require_once "../backend/proteger.php";
     });
     </script>
 
-    <!--  SCRIPT BUSCADOR PRO -->
+    <!-- SCRIPT BUSCADOR PRO -->
     <script>
     const buscador = document.getElementById("buscador");
     const sugerencias = document.getElementById("sugerencias");
 
     buscador.addEventListener("keyup", function() {
-        let valor = this.value;
+        let valor = this.value.trim();
 
         if (valor.length < 2) {
             sugerencias.style.display = "none";
+            sugerencias.innerHTML = "";
             return;
         }
 
-        fetch("../backend/buscar.php?q=" + valor)
-            .then(res => res.json())
+        fetch("../backend/buscar.php?q=" + encodeURIComponent(valor))
+            .then(res => {
+                if (!res.ok) throw new Error("Error en la respuesta del servidor");
+                return res.json();
+            })
             .then(data => {
-
                 sugerencias.innerHTML = "";
 
-                if (data.length === 0) {
+                if (!Array.isArray(data) || data.length === 0) {
                     sugerencias.style.display = "none";
                     return;
                 }
@@ -111,16 +115,18 @@ require_once "../backend/proteger.php";
                     div.textContent = nombre;
 
                     div.onclick = () => {
-                        window.location.href = "jugador.php?nombre=" + nombre.toLowerCase();
+                        window.location.href = "jugador.php?nombre=" + encodeURIComponent(nombre.toLowerCase());
                     };
 
                     sugerencias.appendChild(div);
                 });
-
+            })
+            .catch(err => {
+                console.error("Error al buscar sugerencias:", err);
+                sugerencias.style.display = "none";
             });
     });
     </script>
-    </div>
 
 </body>
 </html>

@@ -1,5 +1,14 @@
 <?php
-session_start();
+ini_set('display_errors', 0);
+ini_set('log_errors', 1);
+
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+header("Cache-Control: no-cache, no-store, must-revalidate");
+header("Pragma: no-cache");
+header("Expires: 0");
 ?>
 
 <!DOCTYPE html>
@@ -8,6 +17,7 @@ session_start();
 <head>
 
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Nosotros | Club de los Poetas del Fútbol</title>
 
@@ -22,71 +32,67 @@ session_start();
 
 <body>
 
-
 <div class="nosotros-container">
 
     <div class="nosotros-card">
 
-      <h1>MANIFIESTO</h1>
+        <h1>MANIFIESTO</h1>
 
-    <div class="nosotros-linea"></div>
+        <div class="nosotros-linea"></div>
 
-    <p class="nosotros-subtitulo">
-        EL CLUB DE LOS POETAS DEL FÚTBOL
-    </p>
-
-
-    <p class="frase-destacada">
-
-        "Donde la pasión encuentra evidencia."
-
-    </p>
-
-    <div class="manifiesto">
-
-        <p>
-        El fútbol nos ha regalado algunas de las emociones más grandes de la historia humana. Ha unido generaciones, construido leyendas y transformado simples partidos en recuerdos eternos. Sin embargo, en una era donde la información circula más rápido que nunca, también se ha vuelto más fácil distorsionar la realidad.
+        <p class="nosotros-subtitulo">
+            EL CLUB DE LOS POETAS DEL FÚTBOL
         </p>
 
-        <p>
-        Cada día millones de aficionados debaten sobre jugadores, récords, títulos e impacto histórico utilizando estadísticas incompletas, datos fuera de contexto o información que jamás fue verificada. Con el tiempo comprendimos que la raíz del problema aparece cuando los hechos dejan de formar parte de la conversación. 
+        <p class="frase-destacada">
+            "Donde la pasión encuentra evidencia."
         </p>
 
-        <p>
-        El fútbol merece algo mejor que opiniones construidas sobre información incorrecta.
-        </p>
+        <div class="manifiesto">
 
-        <p>
-        Merece contexto. Merece memoria.  Merece evidencia.
-        </p>
-        
-        <p>
-        Por esa razón nació "El Club de los Poetas del Fútbol". 
-        </p>
+            <p>
+            El fútbol nos ha regalado algunas de las emociones más grandes de la historia humana. Ha unido generaciones, construido leyendas y transformado simples partidos en recuerdos eternos. Sin embargo, en una era donde la información circula más rápido que nunca, también se ha vuelto más fácil distorsionar la realidad.
+            </p>
 
-        <p>
-        Un proyecto construido sobre una convicción simple: la pasión merece verdad.
-        </p>
-        
-        <p>
-        Nuestro objetivo es proporcionar las herramientas necesarias para que cada aficionado, periodista o amante del deporte pueda construir sus propias conclusiones basándose en evidencia verificable. Creemos que los datos no reemplazan la pasión, pero sí pueden protegerla de la desinformación.
+            <p>
+            Cada día millones de aficionados debaten sobre jugadores, récords, títulos e impacto histórico utilizando estadísticas incompletas, datos fuera de contexto o información que jamás fue verificada. Con el tiempo comprendimos que la raíz del problema aparece cuando los hechos dejan de formar parte de la conversación. 
+            </p>
 
-        Porque las leyendas merecen ser recordadas con hechos y no con rumores.
-        </p>
-        
-        <p>La pasión inspira el debate.</p><p>La evidencia le da valor.</p>
+            <p>
+            El fútbol merece algo mejor que opiniones construidas sobre información incorrecta.
+            </p>
 
-        <p class="frase-final">
-        Posdata:   “El olvido está lleno de memoria”    Mario Benedetti... 
-        </p>
+            <p>
+            Merece contexto. Merece memoria. Merece evidencia.
+            </p>
+            
+            <p>
+            Por esa razón nació "El Club de los Poetas del Fútbol". 
+            </p>
 
-        <p class="firma-club">
-        CPF
-        </p>
+            <p>
+            Un proyecto construido sobre una convicción simple: la pasión merece verdad.
+            </p>
+            
+            <p>
+            Nuestro objetivo es proporcionar las herramientas necesarias para que cada aficionado, periodista o amante del deporte pueda construir sus propias conclusiones basándose en evidencia verificable. Creemos que los datos no reemplazan la pasión, pero sí pueden protegerla de la desinformación.
+
+            Porque las leyendas merecen ser recordadas con hechos y no con rumores.
+            </p>
+            
+            <p>La pasión inspira el debate.</p><p>La evidencia le da valor.</p>
+
+            <p class="frase-final">
+            Posdata: “El olvido está lleno de memoria” Mario Benedetti... 
+            </p>
+
+            <p class="firma-club">
+            CPF
+            </p>
+
+        </div>
 
     </div>
-
-</div>
 
     <div class="mision-vision-container">
 
@@ -108,43 +114,34 @@ session_start();
                 Convertirnos en una referencia para aficionados y periodistas deportivos que buscan comprender el fútbol a través de información histórica, estadística y verificable.
             </p>
 
-            </div>
-    
-    
-    <div class="metodologia-card">
-
-    <h2>METODOLOGÍA</h2>
-
-    <p>
-
-        Durante más de dos años se realizó un proceso de investigación,
-        recopilación y validación de información proveniente exclusivamente
-        de organizaciones oficiales y certificadas como FIFA y sus organismos
-        asociados (UEFA, CONMEBOL, entre otros), IFFHS, Transfermarkt,
-        Opta Data y Data Sports Group, reconocidas como fuentes especializadas
-        dentro del sector deportivo.
-
-    </p>
-
-    <p>
-
-        A partir de este modelo de verificación, centrado en competiciones
-        oficiales de primer nivel, hemos construido una base de información
-        sólida, consistente y transparente, orientada a ofrecer el mayor
-        nivel posible de precisión y confiabilidad para nuestros usuarios,
-        alcanzando elevados estándares de consistencia, trazabilidad y
-        verificación dentro de nuestro modelo de análisis.
-
-    </p>
-
-    </div>
+        </div>
         
-    </div>
+        <div class="metodologia-card">
 
+            <h2>METODOLOGÍA</h2>
+
+            <p>
+                Durante más de dos años se realizó un proceso de investigación,
+                recopilación y validación de información proveniente exclusivamente
+                de organizaciones oficiales y certificadas como FIFA y sus organismos
+                asociados (UEFA, CONMEBOL, entre otros), IFFHS, Transfermarkt,
+                Opta Data y Data Sports Group, reconocidas como fuentes especializadas
+                dentro del sector deportivo.
+            </p>
+
+            <p>
+                A partir de este modelo de verificación, centrado en competiciones
+                oficiales de primer nivel, hemos construido una base de información
+                sólida, consistente y transparente, orientada a ofrecer el mayor
+                nivel posible de precisión y confiabilidad para nuestros usuarios,
+                alcanzando elevados estándares de consistencia, trazabilidad y
+                verificación dentro de nuestro modelo de análisis.
+            </p>
+
+        </div>
+            
     </div>
 
 </div>
-
 </body>
-
 </html>
