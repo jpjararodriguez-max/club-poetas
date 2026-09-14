@@ -1,15 +1,24 @@
 <?php
+ini_set('display_errors', 0);
+ini_set('log_errors', 1);
 
 $jugadores = require_once "jugadores.php";
-
-$busqueda = strtolower($_GET['q'] ?? "");
+$busquedaRaw = trim($_GET['q'] ?? "");
+$busqueda = mb_strtolower($busquedaRaw, 'UTF-8');
 
 $resultados = [];
 
-foreach ($jugadores as $clave => $datos) {
-    if (strpos($clave, $busqueda) !== false) {
-        $resultados[] = $datos["nombre"];
+if ($busqueda !== "") {
+    foreach ($jugadores as $clave => $datos) {
+        $claveLimpia = mb_strtolower($clave, 'UTF-8');
+     
+        if (strpos($claveLimpia, $busqueda) !== false) {
+            $resultados[] = $datos["nombre"];
+        }
     }
 }
 
- echo json_encode($resultados);
+header('Content-Type: application/json; charset=utf-8');
+echo json_encode($resultados);
+exit();
+?>
