@@ -216,6 +216,6 @@ function guardarFavoritos() {
     document.getElementById("formFavoritos").submit();
 }
 </script>
-
 </body>
+<?php include "footer.php"; ?>
 </html>

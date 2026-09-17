@@ -15,7 +15,7 @@ $plans = [
     "no_dinero" => [
         "duration" => 0,
         "price" => 0,
-        "pages" => ["dashboard", "perfil", "favoritos", "jugador", "poemas", "comunidad"],
+        "pages" => [],
         "views" => "0 - 0"
     ],
 
@@ -114,7 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 leftAds[leftIndex].style.display = "none";
                 leftIndex = (leftIndex + 1) % leftAds.length;
                 leftAds[leftIndex].style.display = "block";
-            }, 10000);
+            }, 11000);
         }
     }
 
@@ -131,7 +131,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 rightAds[rightIndex].style.display = "none";
                 rightIndex = (rightIndex + 1) % rightAds.length;
                 rightAds[rightIndex].style.display = "block";
-            }, 10000);
+            }, 11000);
         }
     }
 });

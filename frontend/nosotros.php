@@ -30,6 +30,8 @@ header("Expires: 0");
 
 </head>
 
+<a href="dashboard.php" class="back-arrow">&lt;</a>
+
 <body>
 
 <div class="nosotros-container">

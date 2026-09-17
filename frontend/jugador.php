@@ -28,7 +28,63 @@ if (!empty($busqueda)) {
 /* CARGAR NÚMEROS Y ESTADÍSTICAS */
 $numeros = require_once "../backend/numeros_jugadores.php";
 $stats = ($claveJugador && isset($numeros[$claveJugador])) ? $numeros[$claveJugador] : null;
+
+/*  VISTA LIMPIA PARA SIN RESULTADOS (FONDO BLANCO, DORADO Y FLECHA) */
+if (!$jugador): 
 ?>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jugador No Encontrado - El Club de los Poetas del Fútbol</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        body {
+            background-color: #ffffff !important;
+            color: #d4af37 !important;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        .no-results-box {
+            padding: 20px;
+            max-width: 450px;
+        }
+        .no-results-box h2 {
+            color: #d4af37;
+            font-size: 26px;
+            margin-bottom: 15px;
+        }
+        .no-results-box p {
+            color: #b89628;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+
+<!-- FLECHA PARA VOLVER A DASHBOARD -->
+<a href="dashboard.php" class="back-arrow">&lt;</a>
+
+<div class="no-results-box">
+    <h2>No se han encontrado resultados</h2>
+    <p>El jugador que buscas no se encuentra en nuestro club de poetas.</p>
+</div>
+
+</body>
+</html>
+<?php 
+exit(); 
+endif; 
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -45,17 +101,6 @@ $stats = ($claveJugador && isset($numeros[$claveJugador])) ? $numeros[$claveJuga
     <h1>⚽ Perfil del Jugador</h1>
     <a href="dashboard.php" class="btn">⬅ Volver</a>
 </header>
-
-<?php if (!$jugador): ?>
-    <main class="jugador-container">
-        <div style="color:#d4af37; text-align:center; margin: 80px auto; padding: 20px; background: rgba(0,0,0,0.4); border-radius: 10px;">
-            <h2>🔎 No se encontraron resultados</h2>
-            <p>Intenta buscar otro jugador desde el panel principal.</p>
-            <br>
-            <a href="dashboard.php" class="btn">Regresar al Buscador</a>
-        </div>
-    </main>
-<?php else: ?>
 
 <div class="jugador-nav">
 
@@ -159,7 +204,7 @@ $stats = ($claveJugador && isset($numeros[$claveJugador])) ? $numeros[$claveJuga
 
 <div id="numeros-section" style="display:none;">
 
-    <h2 style="color:#C6A34A;">📊 Análisis Detallado</h2>
+    <h2 class="titulo-numeros">📊 Análisis Detallado</h2>
 
     <?php if ($stats): ?>
 
@@ -230,8 +275,6 @@ tabs.forEach(tab => {
     });
 });
 </script>
-
-<?php endif; ?>
-
 </body>
+<?php include "footer.php"; ?>
 </html>

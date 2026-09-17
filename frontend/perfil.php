@@ -73,4 +73,5 @@ if (!empty($correo)) {
 
 </main>
 </body>
+<?php include "footer.php"; ?>
 </html>

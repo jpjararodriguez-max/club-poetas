@@ -19,7 +19,7 @@
         <input 
             type="email" 
             name="correo" 
-            placeholder="tucorreo@gmail.com" 
+            placeholder="tucorreo@gmail.com o @tuempresa.com etc" 
             required
         >
 

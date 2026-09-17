@@ -9,7 +9,7 @@ if (tipo === "periodista") {
     perfilUsuario = "PERIODISTA DEPORTIVO";
 }
 // ===========================================================
-// PASO 2 — ASIGNAR PERFIL AL INPUT OCULTO
+// asignacion del perfiloculto
 // ===========================================================
 document.addEventListener("DOMContentLoaded", () => {
     const inputPerfil = document.getElementById("perfil");
@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // ===========================================================
-// PASO 2 — PERSONALIZAR TÍTULO SEGÚN PERFIL
+// PERSONALIZAR TÍTULO SEGÚN PERFIL
 // ===========================================================
 const titulo = document.getElementById("tituloRegistro");
 
@@ -45,7 +45,7 @@ if (titulo) {
 }
 
 // ===========================================================
-// LISTA COMPLETA DE JUGADORES (ORDEN ORIGINAL)
+// LISTA COMPLETA DE JUGADORES (ORDEN ORIGINAL MIO)
 // ===========================================================
 const jugadores = [
     "Cristiano Ronaldo", "Pelé", "Di Stéfano", "Beckenbauer", "Maradona",
@@ -120,10 +120,13 @@ form.addEventListener("submit", function (e) {
                 "- nombre@empresa.net\n" +
                 "- nombre@empresa.org\n" +
                 "- nombre@empresa.co\n" +
+                "- nombre@empresa.us\n" +
                 "- nombre@empresa.mx\n" +
                 "- nombre@empresa.es\n" +
-                "- nombre@empresa.us\n" +
-                "- nombre@empresa.edu"
+                "- nombre@empresa.com.co\n"+
+                "- nombre@empresa.com.us\n"+
+                "- nombre@empresa.com.mx\n"+
+                "- nombre@empresa.com.es\n"
                  );
             return;
         }

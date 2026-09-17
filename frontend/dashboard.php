@@ -126,7 +126,8 @@ require_once "../backend/proteger.php";
                 sugerencias.style.display = "none";
             });
     });
-    </script>
+</script>
 
+<?php include "footer.php"; ?>
 </body>
 </html>
