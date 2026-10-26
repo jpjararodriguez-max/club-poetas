@@ -155,7 +155,7 @@ Para ejecutar el proyecto de forma local siga los siguientes pasos:
 ## 1. Clonar el repositorio
 
 ```bash
-git clone https://github.com/TU-USUARIO/club-poetas.git
+git clone https://github.com/jpjararodriguez-max/club-poetas.git
 ```
 
 > Si descargó el proyecto en formato ZIP, descomprímalo en la carpeta **htdocs** de XAMPP.
