@@ -214,9 +214,13 @@ La estructura de la base de datos se encuentra incluida mediante el script SQL d
 
 ---
 
-# 🔐 Usuarios de Prueba
+# 🔐 Usuarios y Contraseñas de Prueba
 
-Para realizar pruebas del sistema puede registrar un nuevo usuario desde la interfaz de registro.
+Para realizar las pruebas inmediatas del sistema sin necesidad de registrarse previamente, puede utilizar las siguientes credenciales de prueba cargadas en la base de datos:
+
+| Perfil de Usuario | Correo Electrónico | Contraseña |
+| **Usuario Fanático** | `osandresrr@gmail.com` | `United008rufo#` |
+| **Usuario Periodista** | `carlosgutierrez@miniso.co` | `MinisoCar00&` |
 
 ---
 
@@ -306,6 +310,30 @@ club-poetas
 │
 └── README.md
 ```
+
+# 📚 Documentación Técnica y Artefactos SENA
+
+Todos los documentos técnicos del proceso de desarrollo y diseño del software se encuentran disponibles en la carpeta documentacion:
+
+- 📄 **Documento IEEE 830**
+- 📐 **Casos de Uso UML, Plantillas Extendidas, Diagrama de Clases, Diagrama de Actividades, Diagrama de Componentes, Diagrama de Despliegue**
+- 🎨 **Documento Técnico de Diseño UI/UX**
+- 🛠️ **Manual Técnico**
+- 📘 **Manual de Usuario**
+- 🧪 **Informe de Pruebas**
+- 🏁 **Documento de Cierre Técnico**
+- 🗄️ **Diagrama ER**
+- 👤 **Diccionario de datos.**
+- 👤 **modelo de negocios y simulador financiero**
+- 👤 **documento de emprendimiento y habilidades digitales**
+- 🔄 **Plan de Migración de Datos, Respaldos, Mantenimiento y Capacitación**
+- 💰 **Propuesta Técnica y Económica**
+- 🏁 **acta de entrega**
+- 👤 **lean canvas**
+- 🏁 **video**
+- 🏁 **proyecto productivo**
+
+
 
 ---
 
